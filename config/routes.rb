@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :todos, only: [:index, :new, :create]
+  resource :session, only: [:new, :create]
   root 'todos#index'
 
   # Example of regular route:
