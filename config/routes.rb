@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :todos, only: [:index, :new, :create]
+  resources :todos, only: [:index, :new, :create] do
+    resource :completion, only: [:create]
+  end
   resource :session, only: [:new, :create]
   root 'todos#index'
 

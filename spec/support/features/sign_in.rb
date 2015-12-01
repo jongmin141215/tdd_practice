@@ -8,4 +8,10 @@ module Features
     fill_in 'Email', with: email
     click_on 'Sign in'
   end
+
+  def create_todo(todo)
+    click_on 'Add a new todo'
+    fill_in 'Title', with: todo
+    click_on 'Submit'
+  end
 end
