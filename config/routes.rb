@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :todos, only: [:index, :new, :create] do
-    resource :completion, only: [:create]
+    resource :completion, only: [:create, :destroy]
   end
   resource :session, only: [:new, :create]
   root 'todos#index'
